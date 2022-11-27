@@ -35,6 +35,12 @@
             <version>${spring-boot-starter-aop.version}</version>
         </dependency>
 
+        <!-- Quartz -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
         <!-- Fastjson 依赖 -->
         <dependency>
             <groupId>com.alibaba</groupId>

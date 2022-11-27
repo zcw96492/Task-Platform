@@ -57,12 +57,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Quartz -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-quartz</artifactId>
-        </dependency>
-
         <!-- 热部署支持依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,7 +1,8 @@
-package com.newcore.task.platform.model.bo;
+package com.newcore.task.platform.utils.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * @author zhouchaowei
  */
 @Data
-public class TaskBO {
+public class TaskBO implements Serializable {
 
     /** 任务ID */
     private Long id;

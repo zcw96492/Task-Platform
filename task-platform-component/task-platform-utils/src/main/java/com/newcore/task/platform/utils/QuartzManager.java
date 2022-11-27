@@ -1,8 +1,7 @@
-package com.newcore.task.platform.quartz;
+package com.newcore.task.platform.utils;
 
-import com.newcore.task.platform.model.bo.TaskBO;
+import com.newcore.task.platform.utils.model.TaskBO;
 import org.quartz.*;
-import org.quartz.DateBuilder.IntervalUnit;
 import org.quartz.impl.matchers.GroupMatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,9 +12,8 @@ import java.util.Set;
 
 /**
  * 计划任务管理
- * @author 小卖铺的老爷爷
- * @date 2018年6月17日
- * @website www.laoyeye.net
+ * @author zhouchaowei
+ * @date 2022年11月27日
  */
 @Service
 public class QuartzManager {
@@ -26,7 +24,7 @@ public class QuartzManager {
     /**
      * 添加定时任务
      * @param taskBO 任务BO模型
-     */    
+     */
     @SuppressWarnings("unchecked")
     public void addJob(TaskBO taskBO) {
         try {
@@ -37,7 +35,7 @@ public class QuartzManager {
             /** 3.定义调度触发规则,使用cornTrigger */
             Trigger trigger = TriggerBuilder.newTrigger()
                     .withIdentity(taskBO.getJobName(), taskBO.getJobGroup())
-                    .startAt(DateBuilder.futureDate(1, IntervalUnit.SECOND))
+                    .startAt(DateBuilder.futureDate(1, DateBuilder.IntervalUnit.SECOND))
                     .withSchedule(CronScheduleBuilder.cronSchedule(taskBO.getCronExpression()))
                     .startNow()
                     .build();
@@ -72,7 +70,7 @@ public class QuartzManager {
 
     /**
      * 所有正在运行的job
-     * 
+     *
      * @return
      * @throws SchedulerException
      */
