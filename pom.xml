@@ -29,5 +29,6 @@
         <module>task-platform-component</module>
         <module>task-platform-api</module>
         <module>task-platform-controller</module>
+        <module>task-platform-document</module>
     </modules>
 </project>
